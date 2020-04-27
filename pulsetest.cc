@@ -72,7 +72,7 @@ public:
             return false;
         }
 
-        pa_context_set_state_callback(_context, context_state_callback, _mainloop_api);
+        pa_context_set_state_callback(_context, context_state_callback, this);
 
         return true;
     }
