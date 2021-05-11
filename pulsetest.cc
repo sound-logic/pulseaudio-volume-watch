@@ -196,7 +196,7 @@ private:
         switch (facility)
         {
             case PA_SUBSCRIPTION_EVENT_SINK:
-                pa_context_get_sink_info_by_index(c, idx, sink_info_callback, userdata);
+                op = pa_context_get_sink_info_by_index(c, idx, sink_info_callback, userdata);
                 break;
 
             default:
