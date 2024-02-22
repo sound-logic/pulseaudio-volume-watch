@@ -160,7 +160,7 @@ private:
                 break;
 
             case PA_CONTEXT_READY:
-                fprintf(stderr, "PulseAudio connection established.\n");
+                // fprintf(stderr, "PulseAudio connection established.\n");
                 pa_context_get_server_info(c, server_info_callback, userdata);
 
                 // Subscribe to sink events from the server. This is how we get
@@ -228,7 +228,7 @@ private:
     static void server_info_callback(pa_context *c, const pa_server_info *i,
             void *userdata)
     {
-        printf("default sink name = %s\n", i->default_sink_name);
+        // printf("default sink name = %s\n", i->default_sink_name);
         pa_context_get_sink_info_by_name(c, i->default_sink_name, sink_info_callback, userdata);
     }
 };
