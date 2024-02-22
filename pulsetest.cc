@@ -217,7 +217,8 @@ private:
         if (i)
         {
             float volume = (float)pa_cvolume_avg(&(i->volume)) / (float)PA_VOLUME_NORM;
-            printf("percent volume = %.0f%%%s\n", volume * 100.0f, i->mute ? " (muted)" : "");
+            printf("{\"vol\":%.0f, \"mute\":%s}\n", volume * 100.0f, i->mute ? "true" : "false");
+            fflush(stdout);
         }
     }
 
